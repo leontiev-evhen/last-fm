@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index';
+import Preloader from './Preloader';
 
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-            Edit <code>src/App.js</code> and save to reload.
-					</p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-            Learn React
-					</a>
-				</header>
-			</div>
+			<div className="container">
+        {/* <Preloader /> */}
+        <header>
+          <div  className="header-section section-title">
+            <h2>HEADER</h2>
+          </div>
+        </header>
+        <main>
+          <div className="row">
+            <div className="col">
+              <div className="track-box">
+                <div className="title"><a href="#">Title</a></div>
+                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/17.jpg" alt="" />
+              </div>
+            </div>
+            <div className="col">
+              <div className="track-box">
+                <div className="title"><a href="#">Title</a></div>
+                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/16.jpg" alt="" />
+              </div>
+            </div>
+            <div className="col">
+              <div className="track-box">
+                <div className="title"><a href="#">Title</a></div>
+                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/13.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer>
+          <div className="footer-section section-title"> 
+            <h2>Last fm</h2>
+          </div>
+        </footer>
+      </div>
 		);
 	}
 }
