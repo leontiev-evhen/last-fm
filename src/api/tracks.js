@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL } from '@/constants'
+import { API_URL } from '../constants'
 
 export const getTopTracks = () => {
   return axios.get(`${API_URL}&method=chart.gettoptracks`);

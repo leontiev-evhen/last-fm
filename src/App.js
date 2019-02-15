@@ -1,47 +1,19 @@
-import React, { Component } from 'react';
-import './index';
-import Preloader from './Preloader';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './views/Home';
+import Track from './views/Track';
+import NotFound from './views/NotFound';
 
-class App extends Component {
-	render() {
-		return (
-			<div className="container">
-        {/* <Preloader /> */}
-        <header>
-          <div  className="header-section section-title">
-            <h2>HEADER</h2>
-          </div>
-        </header>
-        <main>
-          <div className="row">
-            <div className="col">
-              <div className="track-box">
-                <div className="title"><a href="#">Title</a></div>
-                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/17.jpg" alt="" />
-              </div>
-            </div>
-            <div className="col">
-              <div className="track-box">
-                <div className="title"><a href="#">Title</a></div>
-                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/16.jpg" alt="" />
-              </div>
-            </div>
-            <div className="col">
-              <div className="track-box">
-                <div className="title"><a href="#">Title</a></div>
-                <img src="https://colorlib.com/preview/theme/thegazette/img/blog-img/13.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </main>
-        <footer>
-          <div className="footer-section section-title"> 
-            <h2>Last fm</h2>
-          </div>
-        </footer>
-      </div>
-		);
-	}
-}
+const App = () =>  (
+  <Router>
+    <div className="container">
+      <Switch>
+        <Route exact path="/" component={ Home } />
+        <Route exact path="/track/:id" component={ Track } />
+        <Route component={ NotFound } />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;

@@ -90,10 +90,11 @@ main {
 
 .title {
   position: absolute;
-  left: 40%;
   top: 40%;
   font-size: 40px;
   color: #fff;
+  text-align: center;
+  width: 100%;
 }
 
 .header-section, .footer-section {
