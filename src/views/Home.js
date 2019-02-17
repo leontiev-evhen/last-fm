@@ -1,41 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Header, Footer, ListItem, Preloader } from '../components';
-import { getTopTracks } from '../api/tracks';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { ListItem } from '../components';
+import { fetchTracks } from '../actions';
+import ContainerHOC from '../hoc/ContainerHOC';
 
-export default function Home() {
-  const [ tracks, setTracks ] = useState([]);
-  const [ loading, setLoading ] = useState([]);
+const DivContainerHOC = ContainerHOC(({ children }) => children);
 
-  async function fetchTopTracks() {
-    try {
-      setLoading(true);
-      const response = await getTopTracks();
-      setTracks(response.data.tracks.track)
-      setLoading(false);
-    } catch {
-      setLoading(false);
-    }
-  }
-  
-  useEffect(() => {
-    fetchTopTracks();
-  }, []);
+class Home extends Component {
+	componentDidMount() {
+		if (this.props.tracks.length === 0) this.props.fetchTopTracks();
+	}
 
-  if (loading) {
-    return <Preloader />;
-  }
-  return (
-    <>
-      <Header />
-      <main>
-        <div className="row">
-          {tracks.map((track, index) => 
-            <ListItem key={ index } track={ track } /> 
-          )}
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+	render() {
+		const { tracks, isFetching, error } = this.props;
+		return (
+			<div className="row">
+				<DivContainerHOC isFetching={isFetching} error={error}>
+					{tracks.map((track, index) => (
+						<ListItem key={index} track={track} />
+					))}
+				</DivContainerHOC>
+			</div>
+		);
+	}
 }
 
+Home.propTypes = {
+	tracks: PropTypes.array.isRequired,
+	isFetching: PropTypes.bool.isRequired,
+	error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
+	fetchTopTracks: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+	tracks: state.tracks.tracks,
+	isFetching: state.tracks.isFetching,
+	error: state.tracks.error,
+});
+
+const mapDispatchToProps = dispatch => ({
+	fetchTopTracks: () => {
+		dispatch(fetchTracks());
+	},
+});
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Home);

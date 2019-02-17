@@ -36,7 +36,7 @@ main {
   -ms-flex: auto;
 }
 
-.track-box {
+.track-section {
   width: 100%;
   position: relative;
   box-sizing: border-box;
@@ -44,7 +44,7 @@ main {
   height: 550px;
 }
 
-.track-box:before {
+.track-section:before {
   position: absolute;
   content:" ";
   top:0;
@@ -57,25 +57,26 @@ main {
   opacity: 0.75;
 }
 
-.track-box:hover:before {
+.track-section:hover:before {
   opacity: 0;
 }
 
-.track-box img {
+.track-section img {
   height: 100%;
   width: 100%;
 }
 
-.track-box:hover {
+.track-section:hover {
   opacity: .75
 }
 
-.track-box:hover:after {
+.track-section:hover:after {
   width: 100%;
   left: 0;
   right: auto;
 }
-.track-box:after {
+
+.track-section:after {
   position: absolute;
   content: "";
   width: 0%;
@@ -88,6 +89,35 @@ main {
   transition: all 0.4s;
 }
 
+.tag-section {
+  background: #ffe400;
+	width: auto;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px;
+  text-align: center;
+  margin-top: 5px;
+	color: #000;
+}
+
+.profile-section {
+  padding: 20px;
+}
+
+.profile-section img {
+  width: 100%;
+}
+
+.profile-info {
+  width: 85%;
+	margin: 0 auto;
+	word-break: break-word;
+}
+
+.profile-content {
+  text-align: justify;
+}
+
 .title {
   position: absolute;
   top: 40%;
@@ -95,6 +125,10 @@ main {
   color: #fff;
   text-align: center;
   width: 100%;
+}
+
+.title div {
+  font-size: 15px;
 }
 
 .header-section, .footer-section {
@@ -113,13 +147,13 @@ main {
   height: 100px;
 }
 
-.section-title h2 {
+h2 {
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
 }
 
-.section-title h2:after  {
+h2:after  {
   position: absolute;
   content: "";
   width: 100%;
@@ -153,6 +187,11 @@ main {
 	border-radius: 60px;
 	animation: loader 0.8s linear infinite;
 	-webkit-animation: loader 0.8s linear infinite;
+}
+
+.error-message {
+  text-align: center;
+  color: #b31c1c;
 }
 
 @keyframes loader {
@@ -204,12 +243,12 @@ main {
     flex-basis: 33.33%;
   }
 }
-@media(max-width: 815px) {
+/* @media(max-width: 815px) {
   .col {
     flex-basis: 50%;
   }
-}
-@media(max-width: 555px) {
+} */
+@media(max-width: 815px) {
   .col {
     flex-basis: 100%;
   }

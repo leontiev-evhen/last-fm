@@ -1,19 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Header, Footer } from './components';
 import Home from './views/Home';
-import Track from './views/Track';
+import Profile from './views/Profile';
 import NotFound from './views/NotFound';
 
-const App = () =>  (
-  <Router>
-    <div className="container">
-      <Switch>
-        <Route exact path="/" component={ Home } />
-        <Route exact path="/track/:id" component={ Track } />
-        <Route component={ NotFound } />
-      </Switch>
-    </div>
-  </Router>
+const App = () => (
+	<Router>
+		<div className="container">
+			<Header />
+			<main>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/artist/:name" component={Profile} />
+					<Route component={NotFound} />
+				</Switch>
+			</main>
+			<Footer />
+		</div>
+	</Router>
 );
 
 export default App;
