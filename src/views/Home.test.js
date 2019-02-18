@@ -11,9 +11,15 @@ describe('Home view', () => {
     fetchTopTracks: () => {},
   };
 
+  const component = shallow(<Home {...props} />);
+
   it('Home component componentDidMount', () => {
     jest.spyOn(Home.prototype, 'componentDidMount');
     shallow(<Home {...props} />);
     expect(Home.prototype.componentDidMount).toHaveBeenCalled();
+  });
+
+  it('render correctly Home component', () => {
+    expect(component).toMatchSnapshot();
   });
 });

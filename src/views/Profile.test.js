@@ -7,9 +7,15 @@ describe('Profile view', () => {
     match: { state: { params: {name: 'name' } } },
   };
 
+  const component = shallow(<Profile {...props} />);
+
   it('Profile component componentDidMount', () => {
     jest.spyOn(Profile.prototype, 'componentDidMount');
     shallow(<Profile {...props} />);
     expect(Profile.prototype.componentDidMount).toHaveBeenCalled();
+  });
+
+  it('render correctly Profile component', () => {
+    expect(component).toMatchSnapshot();
   });
 });
