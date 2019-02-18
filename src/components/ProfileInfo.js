@@ -8,7 +8,7 @@ export function ProfileInfo({ profile }) {
 		<div className="profile-section">
 			<div className="row">
 				<div className="col">
-					<Image path={profile.image[3]['#text']} />
+					<Image path={profile.image.length > 3 ? profile.image[3]['#text'] : undefined} />
 				</div>
 				<div className="col">
 					<div className="profile-info">
@@ -25,9 +25,9 @@ export function ProfileInfo({ profile }) {
 				<div className="col">
 					<div className="profile-info">
 						<h2>Tags</h2>
-						{profile.tags.tag.map((item, index) => (
+						{profile.tags.tag.map((tag, index) => (
 							<div key={index}>
-								<Tag name={item.name} />
+								<Tag name={tag.name} />
 							</div>
 						))}
 					</div>
@@ -41,9 +41,11 @@ ProfileInfo.propTypes = {
 	profile: PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		image: PropTypes.array,
-		bio: PropTypes.object.isRequired,
+    bio: PropTypes.shape({
+      content: PropTypes.string.isRequired,
+    }).isRequired,
 		tags: PropTypes.shape({
-			tag: PropTypes.array.isRequired,
-		}),
-	}),
+			tag: PropTypes.arrayOf(PropTypes.object).isRequired,
+		}).isRequired,
+	}).isRequired,
 };

@@ -10,5 +10,5 @@ export function Image({ path }) {
 }
 
 Image.propTypes = {
-	path: PropTypes.string.isRequired,
+	path: PropTypes.string,
 };

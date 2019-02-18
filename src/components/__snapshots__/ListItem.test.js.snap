@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem component render correctly ListItem component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ListItem
+    track={
+      Object {
+        "artist": Object {
+          "name": "artist",
+        },
+        "image": Array [
+          Object {
+            "#text": "image1",
+          },
+          Object {
+            "#text": "image2",
+          },
+          Object {
+            "#text": "image3",
+          },
+          Object {
+            "#text": "image3",
+          },
+        ],
+        "name": "track",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="track-section"
+      >
+        <div
+          className="title"
+        >
+          <Link
+            replace={false}
+            to="/artist/artist"
+          >
+            artist
+          </Link>
+          <div
+            className="track-name"
+          >
+            track
+          </div>
+        </div>
+        <Image
+          path="image3"
+        />
+      </div>,
+      "className": "col",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="title"
+          >
+            <Link
+              replace={false}
+              to="/artist/artist"
+            >
+              artist
+            </Link>
+            <div
+              className="track-name"
+            >
+              track
+            </div>
+          </div>,
+          <Image
+            path="image3"
+          />,
+        ],
+        "className": "track-section",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                replace={false}
+                to="/artist/artist"
+              >
+                artist
+              </Link>,
+              <div
+                className="track-name"
+              >
+                track
+              </div>,
+            ],
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "artist",
+                "replace": false,
+                "to": "/artist/artist",
+              },
+              "ref": null,
+              "rendered": "artist",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "track",
+                "className": "track-name",
+              },
+              "ref": null,
+              "rendered": "track",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "path": "image3",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="track-section"
+        >
+          <div
+            className="title"
+          >
+            <Link
+              replace={false}
+              to="/artist/artist"
+            >
+              artist
+            </Link>
+            <div
+              className="track-name"
+            >
+              track
+            </div>
+          </div>
+          <Image
+            path="image3"
+          />
+        </div>,
+        "className": "col",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="title"
+            >
+              <Link
+                replace={false}
+                to="/artist/artist"
+              >
+                artist
+              </Link>
+              <div
+                className="track-name"
+              >
+                track
+              </div>
+            </div>,
+            <Image
+              path="image3"
+            />,
+          ],
+          "className": "track-section",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  replace={false}
+                  to="/artist/artist"
+                >
+                  artist
+                </Link>,
+                <div
+                  className="track-name"
+                >
+                  track
+                </div>,
+              ],
+              "className": "title",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "artist",
+                  "replace": false,
+                  "to": "/artist/artist",
+                },
+                "ref": null,
+                "rendered": "artist",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "track",
+                  "className": "track-name",
+                },
+                "ref": null,
+                "rendered": "track",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "path": "image3",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

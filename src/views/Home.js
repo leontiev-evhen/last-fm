@@ -7,7 +7,7 @@ import ContainerHOC from '../hoc/ContainerHOC';
 
 const DivContainerHOC = ContainerHOC(({ children }) => children);
 
-class Home extends Component {
+export class Home extends Component {
 	componentDidMount() {
 		if (this.props.tracks.length === 0) this.props.fetchTopTracks();
 	}

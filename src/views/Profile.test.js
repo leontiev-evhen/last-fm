@@ -3,18 +3,13 @@ import { shallow } from 'enzyme';
 import Profile from './Profile';
 
 describe('Profile view', () => {
-	const props = {
-		artist: {},
-		isFetching: true,
-		error: '',
-		match: {},
-	};
+  const props = {
+    match: { state: { params: {name: 'name' } } },
+  };
 
-	describe('News container initial', () => {
-		const newsContainer = shallow(<Profile {...props} />);
-		console.log(newsContainer.debug());
-		it('not render <NewsList />', () => {
-			expect(newsContainer.find('containerHOC')).toHaveLength(1);
-		});
-	});
+  it('Profile component componentDidMount', () => {
+    jest.spyOn(Profile.prototype, 'componentDidMount');
+    shallow(<Profile {...props} />);
+    expect(Profile.prototype.componentDidMount).toHaveBeenCalled();
+  });
 });

@@ -8,18 +8,25 @@ const DivContainerHOC = ContainerHOC(ProfileInfo);
 
 export default class Profile extends Component {
 	state = {
-		artist: {},
+		profile: {},
 		isFetching: true,
 		error: '',
 	};
 	componentDidMount() {
-		this.fetchArtist();
+		this.fetchProfile();
 	}
-	fetchArtist = async () => {
+	fetchProfile = async () => {
 		try {
-			const response = await getInfo(this.props.match.params.name);
+      const response = await getInfo(this.props.match.params.name);
+      if(response.data.error) {
+        this.setState({
+				  error: response.data.message,
+				  isFetching: false,
+        });
+        return;
+      }
 			this.setState({
-				artist: response.data.artist,
+				profile: response.data.artist,
 				isFetching: false,
 			});
 		} catch (e) {
@@ -31,9 +38,9 @@ export default class Profile extends Component {
 	};
 
 	render() {
-		const { artist, isFetching, error } = this.state;
+    const { profile, isFetching, error } = this.state;
 		return (
-			<DivContainerHOC error={error} isFetching={isFetching} profile={artist} />
+			<DivContainerHOC error={error} isFetching={isFetching} profile={profile} />
 		);
 	}
 }
