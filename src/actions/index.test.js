@@ -15,6 +15,7 @@ import {
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+const payload = ['track1', 'track2', 'track3'];
 
 describe('actions', () => {
 	it('requestTracks()', () => {
@@ -23,9 +24,9 @@ describe('actions', () => {
 		});
 	});
 	it('requestTracksSucceeded()', () => {
-		expect(requestTracksSucceeded([1, 2, 3])).toEqual({
+		expect(requestTracksSucceeded(payload)).toEqual({
 			type: REQUEST_TRACKS_SUCCEEDED,
-			payload: [1, 2, 3],
+			payload,
 		});
 	});
 	it('requestTracksFailed()', () => {
@@ -48,13 +49,13 @@ describe('actions', () => {
 				const request = moxios.requests.mostRecent();
 				request.respondWith({
 					status: 200,
-					response: { tracks: { track: [1, 2, 3] } },
+					response: { tracks: { track: payload } },
 				});
 			});
 
 			const expectedActions = [
 				{ type: REQUEST_TRACKS },
-				{ type: REQUEST_TRACKS_SUCCEEDED, payload: [1, 2, 3] },
+				{ type: REQUEST_TRACKS_SUCCEEDED, payload: payload },
 			];
 			const store = mockStore({});
 

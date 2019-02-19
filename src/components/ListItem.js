@@ -11,7 +11,9 @@ export function ListItem({ track }) {
 					<Link to={`/artist/${track.artist.name}`}>{track.artist.name}</Link>
 					<div className="track-name">{track.name}</div>
 				</div>
-				<Image path={track.image.length > 3 ? track.image[3]['#text'] : undefined} />
+				<Image
+					path={track.image.length > 3 ? track.image[3]['#text'] : undefined}
+				/>
 			</div>
 		</div>
 	);
@@ -22,7 +24,7 @@ ListItem.propTypes = {
 		name: PropTypes.string.isRequired,
 		image: PropTypes.array,
 		artist: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
+			name: PropTypes.string.isRequired,
+		}).isRequired,
 	}).isRequired,
 };

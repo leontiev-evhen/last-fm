@@ -8,7 +8,11 @@ export function ProfileInfo({ profile }) {
 		<div className="profile-section">
 			<div className="row">
 				<div className="col">
-					<Image path={profile.image.length > 3 ? profile.image[3]['#text'] : undefined} />
+					<Image
+						path={
+							profile.image.length > 3 ? profile.image[3]['#text'] : undefined
+						}
+					/>
 				</div>
 				<div className="col">
 					<div className="profile-info">
@@ -41,9 +45,9 @@ ProfileInfo.propTypes = {
 	profile: PropTypes.shape({
 		name: PropTypes.string.isRequired,
 		image: PropTypes.array,
-    bio: PropTypes.shape({
-      content: PropTypes.string.isRequired,
-    }).isRequired,
+		bio: PropTypes.shape({
+			content: PropTypes.string.isRequired,
+		}).isRequired,
 		tags: PropTypes.shape({
 			tag: PropTypes.arrayOf(PropTypes.object).isRequired,
 		}).isRequired,

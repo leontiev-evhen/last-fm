@@ -45,7 +45,7 @@ describe('tracks reducer', () => {
 
 		const action = {
 			type: REQUEST_TRACKS_SUCCEEDED,
-			payload: [1, 2, 3],
+			payload: ['track1', 'track2', 'track3'],
 		};
 
 		expect(tracks(initialState, action)).toEqual({

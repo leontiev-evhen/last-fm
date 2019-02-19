@@ -41,7 +41,6 @@ main {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  height: 550px;
 }
 
 .track-section:before {

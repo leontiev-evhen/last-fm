@@ -17,14 +17,14 @@ export default class Profile extends Component {
 	}
 	fetchProfile = async () => {
 		try {
-      const response = await getInfo(this.props.match.params.name);
-      if(response.data.error) {
-        this.setState({
-				  error: response.data.message,
-				  isFetching: false,
-        });
-        return;
-      }
+			const response = await getInfo(this.props.match.params.name);
+			if (response.data.error) {
+				this.setState({
+					error: response.data.message,
+					isFetching: false,
+				});
+				return;
+			}
 			this.setState({
 				profile: response.data.artist,
 				isFetching: false,
@@ -38,9 +38,13 @@ export default class Profile extends Component {
 	};
 
 	render() {
-    const { profile, isFetching, error } = this.state;
+		const { profile, isFetching, error } = this.state;
 		return (
-			<DivContainerHOC error={error} isFetching={isFetching} profile={profile} />
+			<DivContainerHOC
+				error={error}
+				isFetching={isFetching}
+				profile={profile}
+			/>
 		);
 	}
 }
