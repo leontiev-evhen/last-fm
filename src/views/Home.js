@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ListItem } from '../components';
+import { ListItem, ErrorBoundary } from '../components';
 import { fetchTracks } from '../actions';
 import ContainerHOC from '../hoc/ContainerHOC';
 
@@ -18,7 +18,9 @@ export class Home extends Component {
 			<div className="row">
 				<DivContainerHOC isFetching={isFetching} error={error}>
 					{tracks.map((track, index) => (
-						<ListItem key={index} track={track} />
+						<ErrorBoundary key={index}>
+              <ListItem track={track} />
+            </ErrorBoundary>
 					))}
 				</DivContainerHOC>
 			</div>
